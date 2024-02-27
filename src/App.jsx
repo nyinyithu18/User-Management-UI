@@ -1,13 +1,10 @@
-import { Button } from '@mui/material'
+import { Button } from 'flowbite-react'
 import React from 'react'
-import AddAlertIcon from '@mui/icons-material/AddAlert';
 
 const App = () => {
   return (
     <div>
-      <h1 className='font-bold text-center'>Hello world</h1>
-      <Button >Hello</Button>
-      <AddAlertIcon color='disabled'/>
+      <Button>Hello</Button>
     </div>
   )
 }
