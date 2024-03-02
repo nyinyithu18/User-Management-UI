@@ -6,18 +6,26 @@ import {
   Dropdown,
   Pagination,
   Select,
+  Breadcrumb,
 } from "flowbite-react";
 import { Link } from "react-router-dom";
 
 const UserList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
   const onPageChange = () => setCurrentPage(3);
+
   return (
-    <div className="w-full border">
-      <div className="h-full bg-slate-300">
+    <div className="w-full">
+      <div className="h-auto pb-6 bg-slate-300">
         <h1 className="font-bold text-2xl pt-4 ms-7">User List</h1>
-        <div className="mt-4 mx-7 bg-white p-3">
+        <Breadcrumb aria-label="Default" className="ms-7 mb-6">
+          <Breadcrumb.Item>
+            <Link to="/users" className="hover:text-slate-800">
+              Users
+            </Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
+        <div className="mx-7 bg-white p-7 rounded-md">
           <div className="md:flex justify-between mb-6 mt-3">
             <TextInput
               className="w-64"
@@ -25,10 +33,7 @@ const UserList = () => {
               placeholder="Search Username..."
             />
             <div className="flex mt-3 md:mt-0">
-              <Button
-                type="button"
-                className="me-8 w-20 " color="gray"
-              >
+              <Button type="button" className="me-8 w-20 " color="gray">
                 Filter
               </Button>
               <Button type="button" color="dark">
@@ -54,7 +59,11 @@ const UserList = () => {
                   <Table.Cell>Sliver</Table.Cell>
                   <Table.Cell>Laptop</Table.Cell>
                   <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell><p className="bg-green-400 w-16 text-white rounded-xl text-center">Active</p></Table.Cell>
+                  <Table.Cell>
+                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
+                      Active
+                    </p>
+                  </Table.Cell>
                   <Table.Cell>
                     <Dropdown label="Action" inline>
                       <Dropdown.Item>View</Dropdown.Item>
@@ -70,7 +79,11 @@ const UserList = () => {
                   <Table.Cell>Sliver</Table.Cell>
                   <Table.Cell>Laptop</Table.Cell>
                   <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell><p className="bg-red-600 w-16 text-white rounded-xl text-center">Inactive</p></Table.Cell>
+                  <Table.Cell>
+                    <p className="bg-red-600 w-16 text-white rounded-xl text-center">
+                      Inactive
+                    </p>
+                  </Table.Cell>
                   <Table.Cell>
                     <Dropdown label="Action" inline>
                       <Dropdown.Item>View</Dropdown.Item>
@@ -86,7 +99,11 @@ const UserList = () => {
                   <Table.Cell>Sliver</Table.Cell>
                   <Table.Cell>Laptop</Table.Cell>
                   <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell><p className="bg-green-400 w-16 text-white rounded-xl text-center">Active</p></Table.Cell>
+                  <Table.Cell>
+                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
+                      Active
+                    </p>
+                  </Table.Cell>
                   <Table.Cell>
                     <Dropdown label="Action" inline>
                       <Dropdown.Item>View</Dropdown.Item>
@@ -102,7 +119,11 @@ const UserList = () => {
                   <Table.Cell>Sliver</Table.Cell>
                   <Table.Cell>Laptop</Table.Cell>
                   <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell><p className="bg-red-600 w-16 text-white rounded-xl text-center">Inactive</p></Table.Cell>
+                  <Table.Cell>
+                    <p className="bg-red-600 w-16 text-white rounded-xl text-center">
+                      Inactive
+                    </p>
+                  </Table.Cell>
                   <Table.Cell>
                     <Dropdown label="Action" inline>
                       <Dropdown.Item>View</Dropdown.Item>
@@ -118,7 +139,11 @@ const UserList = () => {
                   <Table.Cell>Sliver</Table.Cell>
                   <Table.Cell>Laptop</Table.Cell>
                   <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell><p className="bg-green-400 w-16 text-white rounded-xl text-center">Active</p></Table.Cell>
+                  <Table.Cell>
+                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
+                      Active
+                    </p>
+                  </Table.Cell>
                   <Table.Cell>
                     <Dropdown label="Action" inline>
                       <Dropdown.Item>View</Dropdown.Item>
@@ -134,7 +159,11 @@ const UserList = () => {
                   <Table.Cell>Sliver</Table.Cell>
                   <Table.Cell>Laptop</Table.Cell>
                   <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell><p className="bg-green-400 w-16 text-white rounded-xl text-center">Active</p></Table.Cell>
+                  <Table.Cell>
+                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
+                      Active
+                    </p>
+                  </Table.Cell>
                   <Table.Cell>
                     <Dropdown label="Action" inline>
                       <Dropdown.Item>View</Dropdown.Item>

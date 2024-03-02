@@ -1,18 +1,20 @@
-import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react"
-import { useContext, createContext, useState } from "react"
+import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react";
+import { useContext, createContext, useState } from "react";
 
-const SidebarContext = createContext()
+const SidebarContext = createContext();
 
 export default function Sidebar({ expanded, onToggle, children }) {
-  
-  
   return (
     <aside className="h-screen">
       <nav className="h-full flex flex-col bg-white border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
-          <h1 className={`font-bold text-xl text-center overflow-hidden transition-all ${
+          <h1
+            className={`font-bold text-xl text-center overflow-hidden transition-all ${
               expanded ? "w-32" : "w-0"
-            }`}>PicoSBS</h1>
+            }`}
+          >
+            PicoSBS
+          </h1>
           <button
             onClick={onToggle}
             className="p-1.5 rounded-lg bg-gray-50 hover:bg-gray-100"
@@ -24,15 +26,13 @@ export default function Sidebar({ expanded, onToggle, children }) {
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="flex-1 px-3">{children}</ul>
         </SidebarContext.Provider>
-
       </nav>
     </aside>
-  )
+  );
 }
 
 export function SidebarItem({ icon, text, active, alert }) {
-  const { expanded } = useContext(SidebarContext)
-
+  const { expanded } = useContext(SidebarContext);
 
   return (
     <li
@@ -76,5 +76,5 @@ export function SidebarItem({ icon, text, active, alert }) {
         </div>
       )}
     </li>
-  )
+  );
 }

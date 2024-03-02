@@ -1,11 +1,31 @@
 import React from "react";
-import { Button, Checkbox, Label, Select, TextInput } from "flowbite-react";
+import {
+  Button,
+  Checkbox,
+  Label,
+  Select,
+  TextInput,
+  Breadcrumb,
+} from "flowbite-react";
+import { Link } from "react-router-dom";
 
 const UserCreate = () => {
   return (
     <div className="w-full">
-      <div className="h-full bg-slate-300">
+      <div className="h-auto pb-3 bg-slate-300">
         <h1 className="font-bold text-2xl pt-4 ms-7">Create User</h1>
+        <Breadcrumb aria-label="Default" className="ms-7 mb-6">
+          <Breadcrumb.Item>
+            <Link to="/users" className="hover:text-slate-800">
+              Users List
+            </Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Link to="/users/userCreate" className="hover:text-slate-800">
+              Create
+            </Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
         <div className="mt-4 mx-7 bg-white p-7 rounded-md">
           <h1 className="font-bold text-lg mb-2">User Information</h1>
           <form className="gap-4">
@@ -88,7 +108,7 @@ const UserCreate = () => {
                 <TextInput
                   id="username"
                   type="text"
-                  placeholder="First Name"
+                  placeholder="Username"
                   required
                   shadow
                 />
