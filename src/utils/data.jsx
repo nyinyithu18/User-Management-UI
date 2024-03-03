@@ -1,0 +1,200 @@
+export const userDatas = [
+  {
+    username: "Nyi Nyi Thu",
+    role: "Admin",
+    email: "nyi@gmail.com",
+    status: "true",
+  },
+  {
+    username: "Htet Aung",
+    role: "Test",
+    email: "Htet@gmail.com",
+    status: "false",
+  },
+  {
+    username: "Jone",
+    role: "Waiter",
+    email: "jone@gmail.com",
+    status: "true",
+  },
+  {
+    username: "Nyi Thu",
+    role: "Guest",
+    email: "nyithu@gmail.com",
+    status: "false",
+  },
+  {
+    username: "Bo Lay",
+    role: "Admin",
+    email: "lay@gmail.com",
+    status: "true",
+  },
+  {
+    username: "Su Su",
+    role: "Accountant",
+    email: "su@gmail.com",
+    status: "true",
+  },
+  {
+    username: "Kyaw Kyaw",
+    role: "Cashier",
+    email: "kyaw@gmail.com",
+    status: "true",
+  },
+  {
+    username: "Mya Mya",
+    role: "Ass Admin",
+    email: "mya@gmail.com",
+    status: "true",
+  },
+  {
+    username: "Soe Aung",
+    role: "DevOps",
+    email: "soe@gmail.com",
+    status: "false",
+  },
+  {
+    username: "thu",
+    role: "Waiter",
+    email: "thu@gmail.com",
+    status: "true",
+  },
+];
+
+export const roleListDatas = [
+  { role: "Admin" },
+  { role: "Test" },
+  { role: "Waiter" },
+  { role: "Guest" },
+  { role: "Accountant" },
+  { role: "Ass Admin" },
+  { role: "DevOps" },
+  { role: "Cashier" },
+];
+
+export const rolePermissions = [
+  {
+    name: "User",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Supplier",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Product",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Role",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Customer",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Variation",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Category",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Sms",
+    permissions: ["View", "Create", "Update", "Delete"],
+  },
+  {
+    name: "Manufacture",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Generic",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+  {
+    name: "Purchase",
+    permissions: [
+      "View",
+      "Create",
+      "Update",
+      "Delete",
+      "Import",
+      "Export",
+      "Print",
+    ],
+  },
+];

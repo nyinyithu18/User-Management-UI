@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Table,
@@ -9,11 +9,18 @@ import {
   Breadcrumb,
 } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { userDatas } from "../../utils/data";
 
 const UserList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const onPageChange = () => setCurrentPage(3);
+  const onPageChange = () => setCurrentPage(1);
 
+  const [userDatasList, setUserDatasList] = useState([]);
+
+  useEffect(() => {
+    setUserDatasList(userDatas);
+  }, []);
+  
   return (
     <div className="w-full">
       <div className="h-auto pb-6 bg-slate-300">
@@ -30,7 +37,16 @@ const UserList = () => {
             <TextInput
               className="w-64"
               type="search"
-              placeholder="Search Username..."
+              placeholder="Search Username... / Role..."
+              onChange={(e) =>
+                setUserDatasList(
+                  userDatas.filter(
+                    (f) =>
+                      f.username.toLowerCase().includes(e.target.value) ||
+                      f.role.toLowerCase().includes(e.target.value)
+                  )
+                )
+              }
             />
             <div className="flex mt-3 md:mt-0">
               <Button type="button" className="me-8 w-20 " color="gray">
@@ -47,131 +63,54 @@ const UserList = () => {
                 <Table.HeadCell>UserName</Table.HeadCell>
                 <Table.HeadCell>Role</Table.HeadCell>
                 <Table.HeadCell>Email</Table.HeadCell>
-                <Table.HeadCell>FullName</Table.HeadCell>
                 <Table.HeadCell>Activity</Table.HeadCell>
                 <Table.HeadCell></Table.HeadCell>
               </Table.Head>
               <Table.Body className="divide-y">
-                <Table.Row className="bg-slate-50 hover:bg-slate-100">
-                  <Table.Cell className="whitespace-nowrap">
-                    Apple MacBook Pro 17
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>Laptop</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
-                      Active
-                    </p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Dropdown label="Action" inline>
-                      <Dropdown.Item>View</Dropdown.Item>
-                      <Dropdown.Item>Edit</Dropdown.Item>
-                      <Dropdown.Item>Delete</Dropdown.Item>
-                    </Dropdown>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-slate-50 hover:bg-slate-100">
-                  <Table.Cell className="whitespace-nowrap">
-                    Apple MacBook Pro 17
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>Laptop</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <p className="bg-red-600 w-16 text-white rounded-xl text-center">
-                      Inactive
-                    </p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Dropdown label="Action" inline>
-                      <Dropdown.Item>View</Dropdown.Item>
-                      <Dropdown.Item>Edit</Dropdown.Item>
-                      <Dropdown.Item>Delete</Dropdown.Item>
-                    </Dropdown>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-slate-50 hover:bg-slate-100">
-                  <Table.Cell className="whitespace-nowrap">
-                    Apple MacBook Pro 17
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>Laptop</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
-                      Active
-                    </p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Dropdown label="Action" inline>
-                      <Dropdown.Item>View</Dropdown.Item>
-                      <Dropdown.Item>Edit</Dropdown.Item>
-                      <Dropdown.Item>Delete</Dropdown.Item>
-                    </Dropdown>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-slate-50 hover:bg-slate-100">
-                  <Table.Cell className="whitespace-nowrap">
-                    Apple MacBook Pro 17
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>Laptop</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <p className="bg-red-600 w-16 text-white rounded-xl text-center">
-                      Inactive
-                    </p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Dropdown label="Action" inline>
-                      <Dropdown.Item>View</Dropdown.Item>
-                      <Dropdown.Item>Edit</Dropdown.Item>
-                      <Dropdown.Item>Delete</Dropdown.Item>
-                    </Dropdown>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-slate-50 hover:bg-slate-100">
-                  <Table.Cell className="whitespace-nowrap">
-                    Apple MacBook Pro 17
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>Laptop</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
-                      Active
-                    </p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Dropdown label="Action" inline>
-                      <Dropdown.Item>View</Dropdown.Item>
-                      <Dropdown.Item>Edit</Dropdown.Item>
-                      <Dropdown.Item>Delete</Dropdown.Item>
-                    </Dropdown>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-slate-50 hover:bg-slate-100">
-                  <Table.Cell className="whitespace-nowrap">
-                    Apple MacBook Pro 17
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>Laptop</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <p className="bg-green-400 w-16 text-white rounded-xl text-center">
-                      Active
-                    </p>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Dropdown label="Action" inline>
-                      <Dropdown.Item>View</Dropdown.Item>
-                      <Dropdown.Item>Edit</Dropdown.Item>
-                      <Dropdown.Item>Delete</Dropdown.Item>
-                    </Dropdown>
-                  </Table.Cell>
-                </Table.Row>
+                {userDatasList.length > 0 ? (
+                  userDatasList.map((user, index) => {
+                    return (
+                      <Table.Row
+                        key={index}
+                        className="bg-slate-50 hover:bg-slate-100"
+                      >
+                        <Table.Cell className="whitespace-nowrap">
+                          {user.username}
+                        </Table.Cell>
+                        <Table.Cell>{user.role}</Table.Cell>
+                        <Table.Cell>{user.email}</Table.Cell>
+                        <Table.Cell>
+                          {user.status == "true" ? (
+                            <p className="bg-green-400 w-16 text-white rounded-xl text-center">
+                              Active
+                            </p>
+                          ) : (
+                            <p className="bg-red-400 w-16 text-white rounded-xl text-center">
+                              Inactive
+                            </p>
+                          )}
+                        </Table.Cell>
+                        <Table.Cell>
+                          <Dropdown label="Action" inline>
+                            <Dropdown.Item>View</Dropdown.Item>
+                            <Dropdown.Item>Edit</Dropdown.Item>
+                            <Dropdown.Item>Delete</Dropdown.Item>
+                          </Dropdown>
+                        </Table.Cell>
+                      </Table.Row>
+                    );
+                  })
+                ) : (
+                  <Table.Row className="bg-slate-50 hover:bg-slate-100">
+                    <Table.Cell className="whitespace-nowrap">
+                      No Data
+                    </Table.Cell>
+                    <Table.Cell>No Data</Table.Cell>
+                    <Table.Cell>No Data</Table.Cell>
+                    <Table.Cell>No Data</Table.Cell>
+                    <Table.Cell>No Data</Table.Cell>
+                  </Table.Row>
+                )}
               </Table.Body>
             </Table>
           </div>
