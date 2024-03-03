@@ -14,12 +14,12 @@ import { roleListDatas } from "../../utils/data";
 const RoleList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const onPageChange = () => setCurrentPage(3);
-  
-  const [roleList, setRoleList] = useState([])
 
-  useEffect(()=> {
-    setRoleList(roleListDatas)
-  }, [])
+  const [roleList, setRoleList] = useState([]);
+
+  useEffect(() => {
+    setRoleList(roleListDatas);
+  }, []);
 
   return (
     <div className="w-full">
@@ -38,11 +38,11 @@ const RoleList = () => {
               className="w-52 sm:w-60 lg:w-96"
               type="search"
               placeholder="Search RoleName..."
-              onChange={(e)=>
+              onChange={(e) =>
                 setRoleList(
-                roleListDatas.filter((f)=>
-                f.role.toLowerCase().includes(e.target.value)
-                )
+                  roleListDatas.filter((f) =>
+                    f.role.toLowerCase().includes(e.target.value)
+                  )
                 )
               }
             />

@@ -20,7 +20,7 @@ const UserList = () => {
   useEffect(() => {
     setUserDatasList(userDatas);
   }, []);
-  
+
   return (
     <div className="w-full">
       <div className="h-auto pb-6 bg-slate-300">

@@ -7,10 +7,20 @@ const RoleCreate = () => {
   const [roleName, setRoleName] = useState("");
   const [roleNameError, setRoleNameError] = useState("");
 
-  const handleRoleName = () => {
+  const handleRoleName = (event) => {
+    const { value } = event.target;
+    setRoleName(value);
+    if (!roleName.trim()) {
+      setRoleNameError("Role Name is required");
+    } else {
+      setRoleNameError("");
+    }
+  };
+
+  const handleInputDatas = () => {
     if (!roleName) {
-      setRoleNameError(!roleName ? "RoleName is required" : "");
-      return; 
+      setRoleNameError(!roleName ? "Role Name is required" : "");
+      return;
     }
   };
 
@@ -40,12 +50,14 @@ const RoleCreate = () => {
             <TextInput
               id="rolename"
               type="text"
-              onChange={(e) => setRoleName(e.target.value)}
+              onChange={handleRoleName}
               placeholder="Enter a role name"
               required
               shadow
             />
-            {roleNameError && <div className="text-red-500">{roleNameError}</div>}
+            {roleNameError && (
+              <div className="text-red-500">{roleNameError}</div>
+            )}
           </div>
           <div className="overflow-x-auto">
             <div className="flex gap-10 mb-6">
@@ -95,7 +107,7 @@ const RoleCreate = () => {
           </div>
 
           <div className="flex justify-center mt-6">
-            <Button onClick={handleRoleName} color="dark">
+            <Button onClick={handleInputDatas} color="dark">
               Create
             </Button>
           </div>
