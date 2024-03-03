@@ -60,7 +60,7 @@ const RoleCreate = () => {
             )}
           </div>
           <div className="overflow-x-auto">
-            <div className="flex gap-10 mb-6">
+            <div className="flex gap-10 mb-6 mt-2">
               <p className="font-medium">Administrator Access</p>
               <div className="flex items-center gap-2">
                 <Checkbox style={{ width: "20px", height: "20px" }} />
