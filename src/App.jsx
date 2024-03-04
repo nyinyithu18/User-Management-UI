@@ -6,6 +6,7 @@ import RoleList from "./components/roles/RoleList";
 import SidebarPage from "./components/sidebar/SidebarPage";
 import UserCreate from "./components/users/UserCreate";
 import RoleCreate from "./components/roles/RoleCreate";
+import PageNotFound from "./components/page-not-found/PageNotFound";
 
 const App = () => {
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/users/userCreate" element={<UserCreate />} />
             <Route path="/roles" element={<RoleList />} />
             <Route path="/roles/roleCreate" element={<RoleCreate />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </div>
